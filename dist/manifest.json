@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+
+  "name": "Audoo Extension",
+  "description": "This extension compliments the existing Audoo application by allowing you to add new Notes directly from a Youtube video page.",
+  "version": "0.0.1",
+
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "Open the popup"
+  },
+  "icons": {
+    "16": "auto_prefixer.png",
+    "48": "auto_prefixer.png",
+    "128": "auto_prefixer.png"
+  },
+  "permissions": []
+}

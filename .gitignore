@@ -3,6 +3,8 @@
 coverage/
 dist/*
 !dist/index.html
+!dist/manifest.json
+!dist/auto_prefixer.png
 node_modules/
 *.log
 package-lock.json
