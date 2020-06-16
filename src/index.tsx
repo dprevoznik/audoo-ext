@@ -5,4 +5,4 @@ import App from './App';
 import "./styles.css";
 
 var mountNode = document.getElementById("app");
-ReactDOM.render(<App main="Jane" names={["Jane", "Doe"]} />, mountNode);
+ReactDOM.render(<App />, mountNode);
