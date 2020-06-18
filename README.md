@@ -1,4 +1,5 @@
 # Audoo: Chrome Extension
+## Project Overview
 
 - Chrome Extension written in [TypeScript](https://www.typescriptlang.org/).
 - Minize disruption to your viewing experience by taking notes directly from any Youtube video.
