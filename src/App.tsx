@@ -2,6 +2,7 @@ import * as React from "react";
 import Axios from "axios";
 import { hot } from "react-hot-loader/root";
 import allEmoji from "./allEmoji";
+import SuccessScreen from "./successScreen";
 import "./style.css";
 /// <reference types="chrome/chrome-app"/>
 
@@ -12,6 +13,7 @@ function App() {
   var [date, setDate] = useState("");
   var [involved, setInvolved] = useState("");
   var [feeling, setFeeling] = useState("neutral");
+  var [success, setSuccess] = useState(false);
 
   function handleSubmit(e: any) {
     e.preventDefault();
@@ -38,19 +40,21 @@ function App() {
             public: false,
             created,
           })
-            .then((results: any) => console.log(results))
+            .then(() => setSuccess(true))
             .catch((err: object) => console.log(err));
         }
       }
     );
   }
 
-  return (
+  return success === true ? (
+    <SuccessScreen />
+  ) : (
     <div
       style={{
         display: "flex",
         flexDirection: "column",
-        alignItems: "center"
+        alignItems: "center",
       }}
     >
       <h1 className="standardMargin">Audoo It!</h1>
@@ -74,7 +78,7 @@ function App() {
           value={involved}
           onChange={(e) => setInvolved(e.target.value)}
           type="text"
-          placeholder="Involved (Case13,Greg333)"
+          placeholder="Involved Who?"
         ></input>
         <input
           className="standardMargin"

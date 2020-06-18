@@ -139,14 +139,29 @@ body {
   border-style: solid;
   font-family: sans-serif;
   width: 240px;
+  height: 340px;
   background-color: transparent;
 }
 
 h1 {
-  color: #A0AEC0;
+  color: #a0aec0;
   font-size: 3em;
   font-family: fantasy;
   /* text-decoration: underline; */
+}
+
+input {
+  text-align: center;
+  height: 1.5em;
+  width: auto;
+  border-style: outset;
+  border-color: #a0aec0;
+  border-radius: .7em;
+  border-width: .2em;
+}
+
+input:focus {
+  outline: none;
 }
 
 .emojiSpan {
@@ -167,16 +182,20 @@ h1 {
 }
 
 .recordButton {
-    color: #2d3748;
-    border-color: #e2e8f0;
-    border-width: thin;
-    border-radius: 1em;
-    border-style: solid;
-    font-family: sans-serif;
-    background-color: #A0AEC0;
-    padding: 6px;
+  color: #2d3748;
+  border-color: #e2e8f0;
+  border-width: thin;
+  border-radius: 1em;
+  border-style: solid;
+  font-family: sans-serif;
+  background-color: #a0aec0;
+  padding: 6px;
 }
 
 .recordButton:hover {
-    font-weight: bold;
+  font-weight: 900;
+}
+
+.recordButton:focus {
+  outline: none;
 }
