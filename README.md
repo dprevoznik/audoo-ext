@@ -1,6 +1,8 @@
-# audoo-ext
+# Audoo: Chrome Extension
 
-Empty project.
+- Chrome Extension written in [TypeScript](https://www.typescriptlang.org/).
+- Minize disruption to your viewing experience by taking notes directly from any Youtube video.
+- Once the note saves successfully, navigate to [Audoo](https://bit.ly/audoo-it) to see your page updated with the new note.
 
 ## Building and running on localhost
 
