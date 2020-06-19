@@ -18,7 +18,7 @@ function App() {
   var [feeling, setFeeling] = useState("neutral");
   var [success, setSuccess] = useState(false);
 
-  function handleSubmit(e: any) {
+  function handleSubmit(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
     chrome.tabs.query(
       { active: true, windowId: chrome.windows.WINDOW_ID_CURRENT },

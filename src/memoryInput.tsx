@@ -6,7 +6,7 @@ function MemoryInput(props: any) {
     <input
       className="noBottomMargin"
       value={memory}
-      onChange={(e: any) => {
+      onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
         return setMemory(e.target.value);
       }}
       type="text"

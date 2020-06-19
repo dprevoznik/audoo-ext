@@ -9,7 +9,7 @@ function DateInput(props: any) {
     <input
       className="standardMargin"
       value={date}
-      onChange={(e: any) => {
+      onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
         setDate(e.target.value);
       }}
       type="date"
