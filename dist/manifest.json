@@ -6,7 +6,7 @@
   "version": "0.0.1",
   "browser_action": {
     "default_popup": "index.html",
-    "default_title": "Open the popup"
+    "default_title": "Audoo"
   },
   "icons": {
     "16": "auto_prefixer.png",

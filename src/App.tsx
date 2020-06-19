@@ -2,6 +2,9 @@ import * as React from "react";
 import Axios from "axios";
 import { hot } from "react-hot-loader/root";
 import allEmoji from "./allEmoji";
+import EmojiRow from "./emojiRow";
+import InputItems from "./inputItems";
+import RecordButton from "./recordButton";
 import SuccessScreen from "./successScreen";
 import "./style.css";
 /// <reference types="chrome/chrome-app"/>
@@ -15,7 +18,7 @@ function App() {
   var [feeling, setFeeling] = useState("neutral");
   var [success, setSuccess] = useState(false);
 
-  function handleSubmit(e: any) {
+  function handleSubmit(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
     chrome.tabs.query(
       { active: true, windowId: chrome.windows.WINDOW_ID_CURRENT },
@@ -50,84 +53,18 @@ function App() {
   return success === true ? (
     <SuccessScreen />
   ) : (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
+    <div className="flexColumnCentered">
       <h1 className="standardMargin">Audoo It!</h1>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
-        <input
-          className="noBottomMargin"
-          value={memory}
-          onChange={(e: any) => {
-            return setMemory(e.target.value);
-          }}
-          type="text"
-          placeholder="Record Memory"
-        ></input>
-        <input
-          className="noBottomMargin"
-          value={involved}
-          onChange={(e) => setInvolved(e.target.value)}
-          type="text"
-          placeholder="Involved Who?"
-        ></input>
-        <input
-          className="standardMargin"
-          value={date}
-          onChange={(e: any) => {
-            setDate(e.target.value);
-          }}
-          type="date"
-        ></input>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        {allEmoji.map((emoji: any[], idx: number) => {
-          return (
-            <div
-              className="noBottomMargin"
-              key={idx}
-              onClick={() => {
-                setFeeling(emoji[0]);
-              }}
-            >
-              <span
-                className={
-                  feeling === emoji[0] ? "emojiSpanClicked" : "emojiSpan"
-                }
-                role="img"
-                aria-label={emoji[0]}
-              >
-                {emoji[1]}
-              </span>
-            </div>
-          );
-        })}
-      </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-        }}
-        className="noBottomMargin"
-      >
-        <button className="standardMargin recordButton" onClick={handleSubmit}>
-          Record
-        </button>
-      </div>
+      <InputItems
+        memory={memory}
+        setMemory={setMemory}
+        involved={involved}
+        setInvolved={setInvolved}
+        date={date}
+        setDate={setDate}
+      />
+      <EmojiRow allEmoji={allEmoji} feeling={feeling} setFeeling={setFeeling} />
+      <RecordButton handleSubmit={handleSubmit} />
     </div>
   );
 }
