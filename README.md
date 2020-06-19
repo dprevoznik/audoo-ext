@@ -5,6 +5,9 @@
 - Minize disruption to your viewing experience by taking notes directly from any Youtube video.
 - Once the note saves successfully, navigate to [Audoo](https://bit.ly/audoo-it) to see your page updated with the new note.
 
+## Demo
+![demo](http://g.recordit.co/VBjL9MAQLE.gif)
+
 ## Building and running on localhost
 
 First install dependencies:
