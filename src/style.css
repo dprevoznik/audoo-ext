@@ -156,8 +156,8 @@ input {
   width: auto;
   border-style: outset;
   border-color: #a0aec0;
-  border-radius: .7em;
-  border-width: .2em;
+  border-radius: 0.7em;
+  border-width: 0.2em;
 }
 
 input:focus {
@@ -198,4 +198,25 @@ input:focus {
 
 .recordButton:focus {
   outline: none;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexColumnCentered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flexSuccessScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flexSuccessScreen h1 {
+  padding-top: 20px;
 }
