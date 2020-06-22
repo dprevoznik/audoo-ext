@@ -6,7 +6,7 @@
 - Once the note saves successfully, navigate to [Audoo](https://bit.ly/audoo-it) to see your page updated with the new note.
 
 ## Demo
-![demo](http://g.recordit.co/VBjL9MAQLE.gif)
+![demo](http://g.recordit.co/kP2kcvUpK1.gif)
 
 ## Building and running on localhost
 
