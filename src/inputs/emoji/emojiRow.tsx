@@ -1,7 +1,13 @@
 import * as React from "react";
 import EmojiRowItem from "./emojiRowItem";
 
-function EmojiRow(props: any) {
+interface emojiRowProps {
+  allEmoji: string[][];
+  feeling: string;
+  setFeeling: (value: string | ((prevVar: string) => string)) => void;
+}
+
+function EmojiRow(props: emojiRowProps) {
   var {
     allEmoji,
     feeling,
@@ -9,29 +15,20 @@ function EmojiRow(props: any) {
   }: {
     allEmoji: string[][];
     feeling: string;
-    setFeeling: (newFeeling: string) => void;
+    setFeeling: (value: string | ((prevVar: string) => string)) => void;
   } = props;
   var allEmojiArray = allEmoji.map((emoji: string[], idx: number) => {
     return (
       <EmojiRowItem
-        key={emoji}
         emoji={emoji}
         idx={idx}
         feeling={feeling}
         setFeeling={setFeeling}
+        key={idx}
       />
     );
   });
-  return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
-      {allEmojiArray}
-    </div>
-  );
+  return <div className="flexEmojiRow">{allEmojiArray}</div>;
 }
 
 export default EmojiRow;

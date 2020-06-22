@@ -1,6 +1,10 @@
 import * as React from "react";
 
-function RecordButton(props: any) {
+interface RecordButtonValue {
+  handleSubmit: (e: React.MouseEvent) => void;
+}
+
+function RecordButton(props: RecordButtonValue) {
   return (
     <div className="noBottomMargin">
       <button

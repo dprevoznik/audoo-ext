@@ -129,7 +129,7 @@ table {
 }
 
 /***************** 
-    CUSTOM STYLES
+    ELEMENT STYLES
 ******************/
 
 body {
@@ -147,7 +147,6 @@ h1 {
   color: #a0aec0;
   font-size: 3em;
   font-family: fantasy;
-  /* text-decoration: underline; */
 }
 
 input {
@@ -158,20 +157,16 @@ input {
   border-color: #a0aec0;
   border-radius: 0.7em;
   border-width: 0.2em;
+  font-family: sans-serif;
 }
 
 input:focus {
   outline: none;
 }
 
-.emojiSpan {
-  font-size: large;
-}
-
-.emojiSpanClicked {
-  font-weight: "bold";
-  font-size: x-large;
-}
+/***************** 
+    MARGIN STYLES
+******************/
 
 .standardMargin {
   margin: 15px 10px 15px 10px;
@@ -181,24 +176,9 @@ input:focus {
   margin: 15px 10px 0px 10px;
 }
 
-.recordButton {
-  color: #2d3748;
-  border-color: #e2e8f0;
-  border-width: thin;
-  border-radius: 1em;
-  border-style: solid;
-  font-family: sans-serif;
-  background-color: #a0aec0;
-  padding: 6px;
-}
-
-.recordButton:hover {
-  font-weight: 900;
-}
-
-.recordButton:focus {
-  outline: none;
-}
+/***************** 
+    COLUMN STYLES
+******************/
 
 .flexColumn {
   display: flex;
@@ -210,6 +190,64 @@ input:focus {
   flex-direction: column;
   align-items: center;
 }
+
+/***************** 
+    TITLE STYLES
+******************/
+
+.titleBorder {
+  border-width: 0.3em;
+  border-bottom: 0.05em solid #a0aec0;
+  width: 85%;
+  margin-bottom: 7px;
+}
+
+/***************** 
+    EMOJI STYLES
+******************/
+
+.emojiSpan {
+  font-size: large;
+}
+
+.emojiSpanClicked {
+  font-weight: "bold";
+  font-size: x-large;
+}
+
+.flexEmojiRow {
+  display: flex;
+  justify-content: center;
+}
+
+/***************** 
+    BUTTON STYLES
+******************/
+
+.recordButton {
+  color: #2d3748;
+  border-color: #e2e8f0;
+  border-width: thin;
+  border-radius: 1.5em;
+  border-style: solid;
+  font-family: sans-serif;
+  background-color: #a0aec0;
+  padding: 7px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.recordButton:hover {
+  font-size: medium;
+}
+
+.recordButton:focus {
+  outline: none;
+}
+
+/***************** 
+    SUCCESS STYLES
+******************/
 
 .flexSuccessScreen {
   display: flex;

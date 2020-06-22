@@ -1,6 +1,11 @@
 import * as React from "react";
 
-function DateInput(props: any) {
+interface DateInputProps {
+  date: string;
+  setDate: (value: string | ((prevVar: string) => string)) => void;
+}
+
+function DateInput(props: DateInputProps) {
   var {
     date,
     setDate,
