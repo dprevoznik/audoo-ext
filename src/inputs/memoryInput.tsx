@@ -1,6 +1,11 @@
 import * as React from "react";
 
-function MemoryInput(props: any) {
+interface memoryInputProps {
+  memory: string;
+  setMemory: (value: string | ((prevVar: string) => string)) => void;
+}
+
+function MemoryInput(props: memoryInputProps) {
   var { memory, setMemory }: { memory: string; setMemory: (targetValue: string) => void } = props;
   return (
     <input

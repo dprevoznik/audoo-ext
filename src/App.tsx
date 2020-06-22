@@ -1,11 +1,11 @@
 import * as React from "react";
 import Axios from "axios";
 import { hot } from "react-hot-loader/root";
-import allEmoji from "./allEmoji";
-import EmojiRow from "./emojiRow";
-import InputItems from "./inputItems";
-import RecordButton from "./recordButton";
-import SuccessScreen from "./successScreen";
+import allEmoji from "./inputs/emoji/allEmoji";
+import EmojiRow from "./inputs/emoji/emojiRow";
+import InputItems from "./inputs/inputItems";
+import RecordButton from "./submission/recordButton";
+import SuccessScreen from "./submission/successScreen";
 import "./style.css";
 /// <reference types="chrome/chrome-app"/>
 
@@ -18,7 +18,7 @@ function App() {
   var [feeling, setFeeling] = useState("neutral");
   var [success, setSuccess] = useState(false);
 
-  function handleSubmit(e: React.MouseEvent<HTMLButtonElement>) {
+  function handleSubmit(e: React.MouseEvent) {
     e.preventDefault();
     chrome.tabs.query(
       { active: true, windowId: chrome.windows.WINDOW_ID_CURRENT },
@@ -54,7 +54,9 @@ function App() {
     <SuccessScreen />
   ) : (
     <div className="flexColumnCentered">
-      <h1 className="standardMargin">Audoo It!</h1>
+      <div className="titleBorder flexColumnCentered">
+        <h1 className="standardMargin">Audoo It!</h1>
+      </div>
       <InputItems
         memory={memory}
         setMemory={setMemory}

@@ -1,6 +1,13 @@
 import * as React from "react";
 
-function emojiRowItem(props: any) {
+interface emojiRowItemProps {
+  emoji: string[];
+  idx: number;
+  feeling: string;
+  setFeeling: (value: string | ((prevVar: string) => string)) => void;
+}
+
+function emojiRowItem(props: emojiRowItemProps) {
   var {
     emoji,
     idx,
@@ -10,7 +17,7 @@ function emojiRowItem(props: any) {
     emoji: string[];
     idx: number;
     feeling: string;
-    setFeeling: (feeling: string) => void;
+    setFeeling: (value: string | ((prevVar: string) => string)) => void;
   } = props;
 
   return (

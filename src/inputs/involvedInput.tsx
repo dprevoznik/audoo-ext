@@ -1,6 +1,11 @@
 import * as React from "react";
 
-function InvolvedInput(props: any) {
+interface involvedInputProps {
+  involved: string;
+  setInvolved: (value: string | ((prevVar: string) => string)) => void;
+}
+
+function InvolvedInput(props: involvedInputProps) {
   var {
     involved,
     setInvolved,
