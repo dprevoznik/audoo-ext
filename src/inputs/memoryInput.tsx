@@ -3,10 +3,19 @@ import * as React from "react";
 interface memoryInputProps {
   memory: string;
   setMemory: (value: string | ((prevVar: string) => string)) => void;
+  offYoutube: boolean;
 }
 
 function MemoryInput(props: memoryInputProps) {
-  var { memory, setMemory }: { memory: string; setMemory: (targetValue: string) => void } = props;
+  var {
+    memory,
+    setMemory,
+    offYoutube,
+  }: {
+    memory: string;
+    setMemory: (targetValue: string) => void;
+    offYoutube: boolean;
+  } = props;
   return (
     <input
       className="noBottomMargin"
@@ -16,6 +25,7 @@ function MemoryInput(props: memoryInputProps) {
       }}
       type="text"
       placeholder="Record Memory"
+      disabled={offYoutube}
     ></input>
   );
 }

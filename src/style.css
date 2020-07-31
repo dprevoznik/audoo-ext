@@ -134,34 +134,42 @@ table {
 
 body {
   color: #2d3748;
-  border-color: #e2e8f0;
+  border-color: #d1d6dd;
   border-width: 0.5em;
   border-style: solid;
-  font-family: sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   width: 240px;
-  height: 340px;
-  background-color: transparent;
+  height: 350px;
+  background-color: ghostwhite;
+}
+
+body:hover {
+  cursor: pointer;
 }
 
 h1 {
-  color: #a0aec0;
+  color: ghostwhite;
   font-size: 3em;
   font-family: fantasy;
+  text-shadow: 1px 1px 2px pink;
 }
 
 input {
   text-align: center;
-  height: 1.5em;
+  height: 25px;
   width: auto;
-  border-style: outset;
-  border-color: #a0aec0;
-  border-radius: 0.7em;
-  border-width: 0.2em;
-  font-family: sans-serif;
+  border-color: darkgray;
+  border-width: 0 0 0.1em 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: ghostwhite;
 }
 
 input:focus {
   outline: none;
+  border-color: darkgray;
+  border-width: 0 0 0.2em 0;
 }
 
 /***************** 
@@ -197,9 +205,9 @@ input:focus {
 
 .titleBorder {
   border-width: 0.3em;
-  border-bottom: 0.05em solid #a0aec0;
-  width: 85%;
+  width: 100%;
   margin-bottom: 7px;
+  background-color: #d1d6dd;
 }
 
 /***************** 
@@ -225,21 +233,28 @@ input:focus {
 ******************/
 
 .recordButton {
-  color: #2d3748;
-  border-color: #e2e8f0;
+  color: darkgray;
+  border-color: darkgray;
   border-width: thin;
   border-radius: 1.5em;
   border-style: solid;
   font-family: sans-serif;
-  background-color: #a0aec0;
-  padding: 7px;
-  font-weight: 900;
+  padding: 5px;
+  font-weight: 800;
   text-transform: uppercase;
+  width: 13em;
+  transition: all 0.4s ease;
+  background-color: ghostwhite;
+  box-shadow: 0px 4px 8px #888888;
 }
 
-.recordButton:hover {
-  font-size: medium;
+.recordButtonValid:hover {
+  transform: scale(1.1);
 }
+
+/* .recordButtonInvalid {
+  background-color: indianred;
+} */
 
 .recordButton:focus {
   outline: none;

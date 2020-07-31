@@ -5,6 +5,7 @@ interface emojiRowProps {
   allEmoji: string[][];
   feeling: string;
   setFeeling: (value: string | ((prevVar: string) => string)) => void;
+  offYoutube: boolean;
 }
 
 function EmojiRow(props: emojiRowProps) {
@@ -12,10 +13,12 @@ function EmojiRow(props: emojiRowProps) {
     allEmoji,
     feeling,
     setFeeling,
+    offYoutube,
   }: {
     allEmoji: string[][];
     feeling: string;
     setFeeling: (value: string | ((prevVar: string) => string)) => void;
+    offYoutube: boolean;
   } = props;
   var allEmojiArray = allEmoji.map((emoji: string[], idx: number) => {
     return (
@@ -25,6 +28,7 @@ function EmojiRow(props: emojiRowProps) {
         feeling={feeling}
         setFeeling={setFeeling}
         key={idx}
+        offYoutube={offYoutube}
       />
     );
   });

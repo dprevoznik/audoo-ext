@@ -5,6 +5,7 @@ interface emojiRowItemProps {
   idx: number;
   feeling: string;
   setFeeling: (value: string | ((prevVar: string) => string)) => void;
+  offYoutube: boolean;
 }
 
 function emojiRowItem(props: emojiRowItemProps) {
@@ -13,11 +14,13 @@ function emojiRowItem(props: emojiRowItemProps) {
     idx,
     feeling,
     setFeeling,
+    offYoutube,
   }: {
     emoji: string[];
     idx: number;
     feeling: string;
     setFeeling: (value: string | ((prevVar: string) => string)) => void;
+    offYoutube: boolean;
   } = props;
 
   return (
@@ -25,7 +28,7 @@ function emojiRowItem(props: emojiRowItemProps) {
       className="noBottomMargin"
       key={idx}
       onClick={() => {
-        setFeeling(emoji[0]);
+        if (!offYoutube) setFeeling(emoji[0]);
       }}
     >
       <span
