@@ -6,10 +6,11 @@ import EmojiRow from "./inputs/emoji/emojiRow";
 import InputItems from "./inputs/inputItems";
 import RecordButton from "./submission/recordButton";
 import SuccessScreen from "./submission/successScreen";
+import checkForYoutubeURL from "./helpers/checkForYoutubeURL";
 import "./style.css";
 /// <reference types="chrome/chrome-app"/>
 
-var { useState } = React;
+var { useState, useEffect } = React;
 
 function App() {
   var [memory, setMemory] = useState("");
@@ -17,6 +18,7 @@ function App() {
   var [involved, setInvolved] = useState("");
   var [feeling, setFeeling] = useState("neutral");
   var [success, setSuccess] = useState(false);
+  var [offYoutube, setoffYoutube] = useState(true);
 
   function handleSubmit(e: React.MouseEvent) {
     e.preventDefault();
@@ -50,6 +52,10 @@ function App() {
     );
   }
 
+  useEffect(() => {
+    checkForYoutubeURL(setoffYoutube);
+  }, [offYoutube]);
+
   return success === true ? (
     <SuccessScreen />
   ) : (
@@ -64,9 +70,15 @@ function App() {
         setInvolved={setInvolved}
         date={date}
         setDate={setDate}
+        offYoutube={offYoutube}
       />
-      <EmojiRow allEmoji={allEmoji} feeling={feeling} setFeeling={setFeeling} />
-      <RecordButton handleSubmit={handleSubmit} />
+      <EmojiRow
+        allEmoji={allEmoji}
+        feeling={feeling}
+        setFeeling={setFeeling}
+        offYoutube={offYoutube}
+      />
+      <RecordButton handleSubmit={handleSubmit} offYoutube={offYoutube} />
     </div>
   );
 }

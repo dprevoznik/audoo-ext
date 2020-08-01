@@ -1,6 +1,5 @@
 {
   "manifest_version": 2,
-
   "name": "Audoo Extension",
   "description": "This extension compliments the existing Audoo application by allowing you to add new Notes directly from a Youtube video page.",
   "version": "0.0.1",

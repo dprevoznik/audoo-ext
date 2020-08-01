@@ -3,13 +3,15 @@ import * as React from "react";
 interface involvedInputProps {
   involved: string;
   setInvolved: (value: string | ((prevVar: string) => string)) => void;
+  offYoutube: boolean;
 }
 
 function InvolvedInput(props: involvedInputProps) {
   var {
     involved,
     setInvolved,
-  }: { involved: string; setInvolved: (targetValue: string) => void } = props;
+    offYoutube
+  }: { involved: string; setInvolved: (targetValue: string) => void; offYoutube: boolean } = props;
   return (
     <input
       className="noBottomMargin"
@@ -19,6 +21,7 @@ function InvolvedInput(props: involvedInputProps) {
       }
       type="text"
       placeholder="Involved Who?"
+      disabled={offYoutube}
     ></input>
   );
 }
