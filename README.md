@@ -8,6 +8,9 @@
 ## Demo
 ![demo](http://g.recordit.co/L1XOcYBhND.gif)
 
+### Navigate to Audoo's Website
+![navigate](http://g.recordit.co/iaPHn2fuBT.gif)
+
 ## Building and running on localhost
 
 First install dependencies:
